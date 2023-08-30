@@ -6,7 +6,9 @@ public class LargestGap {
         int[] arr = getNumbers();
         int[] myArr = removeDuplicates(arr);
         Arrays.sort(myArr);
-        System.out.println(findGap(myArr));
+        int gapSize = findGap(myArr);
+        System.out.println("The largest gap for this array is: " + gapSize);
+     
     }
 
     public static int[] getNumbers(){
@@ -14,9 +16,13 @@ public class LargestGap {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the length of your array:");
         int arrayLength = scan.nextInt();
+        clearScreen();
         int[] myArray = new int[arrayLength];
         for(int i = 0; i < arrayLength; i++){
+            System.out.println("Enter array element value:");
             myArray[i] = scan.nextInt();
+            clearScreen();
+            
         }
         return myArray;
     }
@@ -51,4 +57,9 @@ public class LargestGap {
         }
         return maxGap;
     }
+    private static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+            
+}
 }
