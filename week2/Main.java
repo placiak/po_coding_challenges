@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class Confluence {
+public class Main {
 
     public static class Node<T> {
         T val;
